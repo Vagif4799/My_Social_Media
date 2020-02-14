@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -21,9 +22,13 @@ public class Controller {
     public Button chooseButton;
     @FXML
     public Button implementButton;
+    @FXML
+    public TextField textfield;
 
     @FXML
     private GridPane gridpane;
+
+    public String mainFilePath;
 
     @FXML
     public void handleChooseButtonClick(ActionEvent event) throws IOException {
@@ -32,6 +37,7 @@ public class Controller {
         Stage stage = (Stage) gridpane.getScene().getWindow();
         File file = fileChooser.showOpenDialog(stage);
         String filePath2 = file.getParent();
+        mainFilePath = filePath2;
         System.out.println(filePath2);
     }
 
@@ -47,7 +53,17 @@ public class Controller {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+        // taking text from textfield
+        String RRN = textfield.getText();
+        // add new code here
+
+        // testing
         System.out.println("Implement Button clicked");
+        System.out.println(mainFilePath);
+        System.out.println(RRN);
     }
 
+
+
+    // end of controller
 }

@@ -14,7 +14,7 @@
     <Button fx:id="chooseButton" onAction="#handleChooseButtonClick" text="choose file"  GridPane.columnIndex="1"  GridPane.rowIndex="1"/>
 
     <Label text="Enter RRN: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <TextField fx:id="textfield" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
     <Button fx:id="implementButton" onAction="#handleImplementButtonClick" text="implement" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
