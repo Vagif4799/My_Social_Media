@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class FinalWindowController {
 
@@ -14,7 +15,8 @@ public class FinalWindowController {
     private GridPane gridpane2;
 
     public void handleOkButtonClick(ActionEvent event) {
-        System.out.println("Bye");
+        Stage stage = (Stage) gridpane2.getScene().getWindow();
+        stage.close();
     }
 
 }
