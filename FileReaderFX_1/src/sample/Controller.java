@@ -2,6 +2,10 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
@@ -13,7 +17,9 @@ import java.io.IOException;
 
 public class Controller {
 
+    @FXML
     public Button chooseButton;
+    @FXML
     public Button implementButton;
 
     @FXML
@@ -31,6 +37,16 @@ public class Controller {
 
     @FXML
     public void handleImplementButtonClick(ActionEvent event){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FinalWindow.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Final Window");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
         System.out.println("Implement Button clicked");
     }
 
